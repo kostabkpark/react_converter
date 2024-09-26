@@ -1,14 +1,27 @@
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import './App.css'
-import ShareButton from './ShareButton'
+import NewButton from './NewButton'
+import Viewer from './Viewer';
+import Input from './Input';
 
 
 function App() {
-  const handler = () => console.log("클릭되었습니다.");
+  let [count, setCount] = useState(0);
+  let [name, setName] = useState("");
+  const changeCount = () => setCount(count + 1);
+  const changeName = (e) => setName(e.target.value);
+  // console.log("rendered");
+  // console.log(count);
+  // console.log(name);
+  useEffect(() => console.log("mount 되었습니다.") ,[]);
+  useEffect(() => console.log("count 또는 name 이 변경되었습니다.") ,[count,name]);
+  //useEffect(() => console.log("name 이 변경되었습니다.") ,[name]);
   return (
     <>
-      <ShareButton text="Save" color="red" tColor="black" func={handler} />
-      <ShareButton text="Confirm" color="purple" tcolor="yellow" func={handler} />
+      <Viewer count={count}/>
+      <NewButton text="click" func={changeCount}/>
+      <br />
+      <Input name={name} func={changeName}/>
     </>
   )
 }
