@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import ShareButton from './ShareButton'
+import ShareButton from './components/ShareButton'
 
 
 function App() {

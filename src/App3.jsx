@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import TimeConverter from './TimeConverter'
-import DistanceConverter from './DistanceConverter'
-import LengthConverter from './LengthConverter'
+import TimeConverter from './components/TimeConverter'
+import DistanceConverter from './components/DistanceConverter'
+import LengthConverter from './components/LengthConverter'
 
 function App() {
   let [option, setOption] = useState("0");
